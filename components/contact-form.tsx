@@ -32,7 +32,7 @@ export default function ContactForm() {
     await new Promise((resolve) => setTimeout(resolve, 1500))
 
     // Aquí iría la lógica real para enviar el formulario a contactalaskatech@gmail.com
-    console.log("Formulario enviado a contactalaskatech@gmail.com:", formData)
+    console.log("Formulario enviado a contact.alaskatech@gmail.com:", formData)
 
     setIsSubmitting(false)
     setSubmitted(true)
