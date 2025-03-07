@@ -18,6 +18,7 @@ export default function ContactForm() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState("")
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -27,23 +28,38 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError("")
 
-    // Simulación de envío de formulario
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
 
-    // Aquí iría la lógica real para enviar el formulario a contactalaskatech@gmail.com
-    console.log("Formulario enviado a contactalaskatech@gmail.com:", formData)
+      const data = await response.json()
 
-    setIsSubmitting(false)
-    setSubmitted(true)
-    setFormData({
-      name: "",
-      email: "",
-      projectDescription: "",
-    })
+      if (!response.ok) {
+        throw new Error(data.error || "Error al enviar el formulario")
+      }
 
-    // Resetear el estado de enviado después de 5 segundos
-    setTimeout(() => setSubmitted(false), 5000)
+      setSubmitted(true)
+      setFormData({
+        name: "",
+        email: "",
+        projectDescription: "",
+      })
+
+      // Resetear el estado de enviado después de 5 segundos
+      setTimeout(() => setSubmitted(false), 5000)
+    } catch (err) {
+      console.error("Error al enviar el formulario:", err)
+      setError(err instanceof Error ? err.message : "Error al enviar el formulario")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const formVariants = {
@@ -101,6 +117,16 @@ export default function ContactForm() {
           initial="hidden"
           animate="visible"
         >
+          {error && (
+            <motion.div 
+              className="p-3 bg-red-100 text-red-700 rounded-md" 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
+              {error}
+            </motion.div>
+          )}
+
           <motion.div className="space-y-2" variants={itemVariants}>
             <Label htmlFor="name">Nombre</Label>
             <Input
@@ -200,4 +226,3 @@ export default function ContactForm() {
     </div>
   )
 }
-

@@ -54,9 +54,9 @@ export default function Hero() {
               Explorar Soluciones
               <motion.span
                 initial={{ x: 0 }}
-                animate={{ x: [0, 5, 0] }}
+                animate={{ x: [0, 3, 0] }}
                 transition={{
-                  duration: 1.5,
+                  duration: 1.2,
                   repeat: Number.POSITIVE_INFINITY,
                   repeatType: "loop",
                   ease: "easeInOut",
