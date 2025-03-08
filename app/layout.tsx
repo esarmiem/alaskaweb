@@ -10,7 +10,10 @@ export const metadata: Metadata = {
   title: "Alaska Tech - Soluciones de Software Personalizadas",
   description:
     "Creamos soluciones de software personalizadas que impulsan el crecimiento de tu negocio. Construimos aplicaciones web y móviles de alta calidad.",
-    generator: 'v0.dev'
+    generator: 'v0.dev',
+    icons: {
+      icon: '/favicon.png',
+    }, //favicon
 }
 
 export default function RootLayout({
