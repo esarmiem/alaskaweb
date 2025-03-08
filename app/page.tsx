@@ -5,6 +5,7 @@ import Hero from "@/components/hero"
 import Features from "@/components/features"
 import CTA from "@/components/cta"
 import Footer from "@/components/footer"
+import WhatsAppButton from "@/app/components/WhatsAppButton"
 import { motion } from "framer-motion"
 
 export default function Home() {
@@ -46,6 +47,7 @@ export default function Home() {
         <Features />
         <CTA />
         <Footer />
+        <WhatsAppButton />
       </div>
     </div>
   )
