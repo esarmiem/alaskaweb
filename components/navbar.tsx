@@ -23,7 +23,7 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
-          <Link href="/soluciones" className="text-sm font-medium transition-colors hover:text-primary">
+          {/* <Link href="/soluciones" className="text-sm font-medium transition-colors hover:text-primary">
             Soluciones
           </Link>
           <Link href="/industrias" className="text-sm font-medium transition-colors hover:text-primary">
@@ -34,7 +34,7 @@ export default function Navbar() {
           </Link>
           <Button variant="ghost" size="sm">
             Contacto
-          </Button>
+          </Button> */}
         </nav>
 
         {/* Mobile Menu Button */}
@@ -47,15 +47,15 @@ export default function Navbar() {
           </SheetTrigger>
           <SheetContent side="right" className="w-[250px] sm:w-[300px]">
             <nav className="flex flex-col gap-6 mt-10">
-              <Link href="/soluciones" className="text-lg font-medium transition-colors hover:text-primary">
+              {/*<Link href="/soluciones" className="text-lg font-medium transition-colors hover:text-primary">
                 Soluciones
               </Link>
               <Link href="/industrias" className="text-lg font-medium transition-colors hover:text-primary">
                 Industrias
               </Link>
               <Link href="/nosotros" className="text-lg font-medium transition-colors hover:text-primary">
-                Nosotros
-              </Link>
+                Nosotros 
+              </Link> */}
               <a href="https://wa.me/573217805287?text=Hola%20Alaska%20Tech,%20estoy%20interesado%20en%20sus%20servicios" target="_blank" rel="noopener noreferrer">
                 <Button className="mt-4 flex items-center gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 30 30">

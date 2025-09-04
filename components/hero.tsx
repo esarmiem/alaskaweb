@@ -8,6 +8,12 @@ import FadeIn from "./animations/fade-in"
 import FloatAnimation from "./animations/float-animation"
 
 export default function Hero() {
+  const handleScrollToContact = () => {
+    const contactSection = document.getElementById("contact-section")
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" })
+    }
+  }
   return (
     <section className="container flex min-h-[calc(100vh-3.5rem)] max-w-screen-2xl flex-col items-center justify-center space-y-8 py-24 text-center md:py-32">
       <div className="space-y-4">
@@ -49,9 +55,9 @@ export default function Hero() {
 
       <FadeIn delay={2.0} direction="up" duration={0.8}>
         <FloatAnimation y={5} duration={4}>
-          <Button size="lg" className="relative overflow-hidden group">
+          <Button size="lg" onClick={handleScrollToContact} className="relative overflow-hidden group">
             <span className="relative z-10 flex items-center">
-              Explorar Soluciones
+              Contáctanos
               <motion.span
                 initial={{ x: 0 }}
                 animate={{ x: [0, 3, 0] }}

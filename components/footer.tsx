@@ -1,6 +1,6 @@
-import Link from "next/link"
-import { Mail, Linkedin } from "lucide-react"
-import Image from "next/image"
+import Link from "next/link";
+import { Mail, Linkedin } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -28,18 +28,27 @@ export default function Footer() {
             <h3 className="text-sm font-medium">Soluciones</h3>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link href="/analisis-ia" className="text-muted-foreground transition-colors hover:text-primary">
+                <Link
+                  href="#"
+                  onClick={(e) => e.preventDefault()}
+                  className="text-muted-foreground transition-colors hover:text-primary"
+                >
                   Análisis con IA
                 </Link>
               </li>
               <li>
-                <Link href="/servicios-cloud" className="text-muted-foreground transition-colors hover:text-primary">
+                <Link
+                  href="#"
+                  onClick={(e) => e.preventDefault()}
+                  className="text-muted-foreground transition-colors hover:text-primary"
+                >
                   Servicios Cloud
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/desarrollo-web-movil"
+                  href="#"
+                  onClick={(e) => e.preventDefault()}
                   className="text-muted-foreground transition-colors hover:text-primary"
                 >
                   Desarrollo Web y Móvil
@@ -51,12 +60,20 @@ export default function Footer() {
             <h3 className="text-sm font-medium">Empresa</h3>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link href="https://www.linkedin.com/company/alaskatech/about" target="blank" className="text-muted-foreground transition-colors hover:text-primary">
+                <Link
+                  href="https://www.linkedin.com/company/alaskatech/about"
+                  target="blank"
+                  className="text-muted-foreground transition-colors hover:text-primary"
+                >
                   Nosotros
                 </Link>
               </li>
               <li>
-                <Link href="https://www.linkedin.com/company/alaskatech/jobs" target="blank" className="text-muted-foreground transition-colors hover:text-primary">
+                <Link
+                  href="https://www.linkedin.com/company/alaskatech/jobs"
+                  target="blank"
+                  className="text-muted-foreground transition-colors hover:text-primary"
+                >
                   Carreras
                 </Link>
               </li>
@@ -107,9 +124,10 @@ export default function Footer() {
       </div>
       <div className="container border-t py-6">
         <p className="text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Alaska Tech. Todos los derechos reservados.
+          © {new Date().getFullYear()} Alaska Tech. Todos los derechos
+          reservados.
         </p>
       </div>
     </footer>
-  )
+  );
 }
