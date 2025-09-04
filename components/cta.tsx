@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 
 export default function CTA() {
   return (
-    <section className="border-t relative overflow-hidden">
+    <section id="contact-section" className="border-t relative overflow-hidden">
       <div className="container py-24 md:py-32">
         <FadeIn direction="up" threshold={0.2}>
           <div className="text-center mb-12">
