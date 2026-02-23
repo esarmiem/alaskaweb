@@ -52,11 +52,11 @@ export default function Features() {
       </FadeIn>
 
       <StaggerChildren threshold={0.1} staggerDelay={0.15}>
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-6xl auto-rows-fr grid-cols-1 gap-8 lg:grid-cols-2">
           {features.map((feature, index) => (
             <StaggerItem key={index} direction="up" distance={40}>
               <motion.div
-                className="group relative overflow-hidden rounded-xl border bg-background p-7 sm:p-8"
+                className="group relative flex h-full flex-col overflow-hidden rounded-xl border bg-background p-7 sm:p-8"
                 whileHover={{ y: -6, boxShadow: "0 18px 45px -22px rgba(0, 0, 0, 0.35)" }}
                 transition={{ duration: 0.3 }}
               >
@@ -78,7 +78,9 @@ export default function Features() {
                   </div>
                 </div>
 
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">{feature.description}</p>
+                <p className="mt-4 line-clamp-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                  {feature.description}
+                </p>
 
                 <ul className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-3">
                   {feature.puntos.map((punto) => (
