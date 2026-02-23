@@ -19,6 +19,12 @@ yarn-error.log*
 # env files
 .env*
 
+# Editor directories and files
+.agent
+.agents
+.cursor
+.trae
+
 # vercel
 .vercel
 

@@ -3,6 +3,7 @@
 import Navbar from "@/components/navbar"
 import Hero from "@/components/hero"
 import Features from "@/components/features"
+import Projects from "@/components/projects"
 import CTA from "@/components/cta"
 import Footer from "@/components/footer"
 import WhatsAppButton from "@/app/components/WhatsAppButton"
@@ -45,6 +46,7 @@ export default function Home() {
         <Navbar />
         <Hero />
         <Features />
+        <Projects />
         <CTA />
         <Footer />
         <WhatsAppButton />
@@ -52,4 +54,3 @@ export default function Home() {
     </div>
   )
 }
-
